@@ -4,7 +4,6 @@ Run locally with:
     streamlit run streamlit_final_project_clean.py
 """
 import streamlit as st
-import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
