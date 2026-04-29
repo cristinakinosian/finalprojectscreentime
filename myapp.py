@@ -28,9 +28,9 @@ NEGATIVE_THRESHOLD = 2         # 2 hours recreational screen time
 
 # graph display functions
 
-def show_bar_graph(labels, values, title, ylabel="Hours per day", colors=['#66c2a5','#fc8d62', '#8da0cb']):
+def show_bar_graph(labels, values, title, ylabel="Hours per day", colors=['#801650','#E9724D', '#556B2F']):
     """display streamlit-compatible bar graph."""
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(4, 2))
     ax.bar(labels, values, color=colors)
     ax.set_ylabel(ylabel)
     ax.set_title(title)
@@ -54,7 +54,7 @@ def show_donut_chart(labels, data, title):
         st.info("No strategies were selected, so no donut chart can be displayed yet.")
         return
 
-    fig, ax = plt.subplots(figsize=(7, 7))
+    fig, ax = plt.subplots(figsize=(5, 5))
     explode = [0.05] * len(data)
 
     ax.pie(
