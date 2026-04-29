@@ -41,7 +41,7 @@ def show_bar_graph(labels, values, title, ylabel="Hours per day", colors=['#8016
 
 def show_2nd_bar_graph(labels, values, title, ylabel="Hours per day", colors2=['#D18AA1','#FFC296', '#DCE0B8', '#BAAFC7']):
     """display streamlit-compatible bar graph."""
-    fig, ax = plt.subplots(figsize=(4, 4))
+    fig, ax = plt.subplots(figsize=(5, 4))
     ax.bar(labels, values, color=colors2)
     ax.set_ylabel(ylabel)
     ax.set_title(title)
