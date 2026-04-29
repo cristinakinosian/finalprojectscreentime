@@ -28,7 +28,7 @@ NEGATIVE_THRESHOLD = 2         # 2 hours recreational screen time
 
 # graph display functions
 
-def show_bar_graph(labels, values, title, ylabel="Hours per day", colors=['#801650','#E9724D', '#A6D0AE', '#ABD3DB']):
+def show_bar_graph(labels, values, title, ylabel="Hours per day", colors=['#801650','#E9724D', '#A6D0AE']):
     """display streamlit-compatible bar graph."""
     fig, ax = plt.subplots(figsize=(4, 4))
     ax.bar(labels, values, color=colors)
@@ -39,6 +39,16 @@ def show_bar_graph(labels, values, title, ylabel="Hours per day", colors=['#8016
     st.pyplot(fig)
     plt.close(fig)
 
+def show_2nd_bar_graph(labels, values, title, ylabel="Hours per day", colors2=['#D18AA1','#FFC296', '#DCE0B8', '#BAAFC7']):
+    """display streamlit-compatible bar graph."""
+    fig, ax = plt.subplots(figsize=(4, 4))
+    ax.bar(labels, values, color=colors2)
+    ax.set_ylabel(ylabel)
+    ax.set_title(title)
+    ax.tick_params(axis="x", rotation=20)
+    fig.tight_layout()
+    st.pyplot(fig)
+    plt.close(fig)
 
 def show_table(data, title):
     """Display a pandas DataFrame with a title and return the DataFrame."""
@@ -137,7 +147,7 @@ show_bar_graph(
 st.info(f"Your estimated total daily screen time is **{total_screen_time:.2f} hours**.")
 st.caption("Note: Information gathered from World Health Organization and Statista, as of 2024. Full works cited list available in the final section of this app.")
 
-show_bar_graph(
+show_2nd_bar_graph(
     ["Phone\nScreen Time", "Other Leisure\nScreen Time", "Unavoidable\nScreen Time", "Total\nScreen Time"],
     [phone_screen_time, recreational_screen_time, non_leisure_screen_time, total_screen_time],
     "Your Estimated Daily Screen Time",
