@@ -1,4 +1,4 @@
-import streamlit as st
+
 [theme]
 # Primary accent color (Rose Pink)
 primaryColor = "#E08396"
@@ -12,20 +12,3 @@ secondaryBackgroundColor = "#C3C9BC"
 # Text color (Dark Brown)
 textColor = "#5D4037"
 
-# Font style
-
-st.markdown(
-  """
-  <style>
-  @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-  
-  html, body, [class*="css"] {
-  font-family: "Elms Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  }
-  </style>
-  """,
-  unsafe_allow_html=True
-)
