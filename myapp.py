@@ -28,7 +28,7 @@ NEGATIVE_THRESHOLD = 2         # 2 hours recreational screen time
 
 # graph display functions
 
-def show_bar_graph(labels, values, title, ylabel="Hours per day", colors=['#801650','#E9724D', '#556B2F']):
+def show_bar_graph(labels, values, title, ylabel="Hours per day", colors=['#801650','#E9724D', '#A6D0AE', '#ABD3DB']):
     """display streamlit-compatible bar graph."""
     fig, ax = plt.subplots(figsize=(4, 4))
     ax.bar(labels, values, color=colors)
