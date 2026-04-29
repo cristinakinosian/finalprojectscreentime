@@ -1,2 +1,15 @@
 [theme] 
-base="dark"
+# Primary accent color (Rose Pink)
+primaryColor = "#E08396"
+
+# Background color (Linen)
+backgroundColor = "#FAF0E6"
+
+# Sidebar and Widget background (Sage)
+secondaryBackgroundColor = "#C3C9BC"
+
+# Text color (Dark Brown)
+textColor = "#5D4037"
+
+# Font style
+font = "sans serif"
