@@ -11,6 +11,24 @@ import streamlit as st
 from scipy.interpolate import interp1d
 from scipy.optimize import curve_fit
 
+# Font style
+
+st.markdown(
+  """
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+  
+  html, body, [class*="css"] {
+  font-family: "Elms Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  }
+  </style>
+  """,
+  unsafe_allow_html=True
+)
+
 
 # -----------------------------
 # Page setup
