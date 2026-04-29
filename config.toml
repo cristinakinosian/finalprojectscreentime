@@ -1,4 +1,5 @@
 [theme] 
+[theme]
 # Primary accent color (Rose Pink)
 primaryColor = "#E08396"
 
@@ -12,4 +13,4 @@ secondaryBackgroundColor = "#C3C9BC"
 textColor = "#5D4037"
 
 # Font style
-font = "serif"
+font = "sans serif"
