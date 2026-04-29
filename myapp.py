@@ -17,7 +17,7 @@ from scipy.optimize import curve_fit
 # -----------------------------
 st.set_page_config(
     page_title="Reducing Sedentary Screen Time",
-    page_icon="📱",
+    page_icon="star",
     layout="wide",
 )
 
