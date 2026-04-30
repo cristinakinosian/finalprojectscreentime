@@ -93,37 +93,39 @@ def linear_model(x, m, b):
 
 
 def show_3d_rainbow_spiral():
-    """Display a 3D rainbow spiral in Streamlit."""
-    
-    # Set up the figure and 3D axes
+    """displays 3d rainbow slide"""
+
+    # Create figure
     fig = plt.figure(figsize=(10, 7))
     ax = fig.add_subplot(111, projection='3d')
 
-    # Generate data for the spiral
-    z = np.linspace(0, 20, 1000)
-    x = np.sin(z)
-    y = np.cos(z)
+    # Parameters for spiral surface
+    theta = np.linspace(0, 6 * np.pi, 200)   # controls how many turns
+    r = np.linspace(0.5, 2, 50)              # controls width of the ramp
 
-    # Create the rainbow effect
-    spiral = ax.scatter3D(x, y, z, c=z, cmap='hsv')
+    theta, r = np.meshgrid(theta, r)
 
-    # Labels and title
-    ax.set_title('3D Rainbow Spiral')
+    # Parametric equations
+    x = r * np.cos(theta)
+    y = r * np.sin(theta)
+    z = theta  # height increases as it spirals
+
+    # Plot surface
+    surface = ax.plot_surface(x, y, z, cmap='hsv', edgecolor='none')
+
+    # Labels
+    ax.set_title('3D Spiral Ramp')
     ax.set_xlabel('X Axis')
     ax.set_ylabel('Y Axis')
-    ax.set_zlabel('Z Axis (Height)')
+    ax.set_zlabel('Height')
 
-    # Add color bar
-    fig.colorbar(spiral, ax=ax, label='Height / Hue')
+    # Color bar
+    fig.colorbar(surface, ax=ax, label='Height / Hue')
 
-    # Display in Streamlit
+    # Show in Streamlit
     st.pyplot(fig)
-
-    # Close figure to prevent memory issues
     plt.close(fig)
-
-
-
+    
 # Top of web page
 
 st.title("Optimize Your Health and Happiness by Minimizing Sedentary Screen Time")
