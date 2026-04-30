@@ -573,8 +573,8 @@ st.write("By tailoring multiple interventions to both the individual and their e
 st.subheader("Disclaimer: Any strategy can fall flat if implemented half-heartedly or mindlessly. Intentional, consistent implementation of strategies is necessary to change deeply ingrained habits related to screen use.")
 st.text("This understanding creates the best opportunity for success, creating an intrinsic motivation to combine behavioral, environmental, and technological approaches into a tailored, comprehensive solution. For example, Keadle et. al. found that intervention models combining multiple strategies such as education of health risks, earning screen time through exercise, automated app time limits, and text reminders of goals led to a tremendous decrease in screen use, exceeding reductions achieved by education-only approaches (Keadle et. al., 2025). These findings suggest that behavior change is most effectively achieved when interventions simultaneously target excessive screen use from behavioral, physical, and digital perspectives.")
 
-st.title(":rainbow[Do your best every day, and remember: **progress is not linear.**]")
-st.title("This is What Progress Actually Looks Like")
+st.title(":rainbow-background[Do your best every day, and remember: *progress is not linear.*]")
+st.title("What Progress Actually Looks Like")
 rainbow_spiral()
 
 
