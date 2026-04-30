@@ -510,6 +510,42 @@ else:
 
 st.divider()
 
+st.set_page_config(page_title="Screen Time Wasted Calculator")
+
+st.title("Screen Time Wasted Calculator 📱⌛")
+st.write("Visualize how much of your life is spent on screens.")
+
+# --- Sidebar Inputs ---
+st.sidebar.header("User Settings")
+current_age = st.sidebar.number_input("Current Age", min_value=1, max_value=100, value=25)
+life_expectancy = st.sidebar.number_input("Life Expectancy", min_value=1, max_value=120, value=80)
+
+# --- Calculations ---
+# Hours per year = total_screen_time * 365.25
+# Years wasted = (Hours per year * years_span) / (24 * 365.25)
+# Simplified: Years wasted = (total_screen_time / 24) * years_span
+
+future_ages = np.arange(current_age, life_expectancy + 1, 1)
+years_passed = future_ages - current_age
+years_wasted = (total_screen_time / 24) * years_passed
+
+# Create DataFrame
+df = pd.DataFrame({
+    'Age': future_ages,
+    'Years Wasted': years_wasted
+})
+df.set_index('Age', inplace=True)
+
+# --- Visualization ---
+st.subheader(f"Projection for {total_screen_time} hours/day")
+st.line_chart(df)
+
+# --- Metrics ---
+total_wasted = years_wasted[-1]
+st.metric(label="Total Years Wasted by Life Expectancy", value=f"{total_wasted:.2f} years")
+
+st.info(f"At {total_screen_time} hours per day, you spend roughly "
+        f"{((total_screen_time/24)*100):.1f}% of your time alive looking at screens.")
 
 
 # -----------------------------
