@@ -21,23 +21,6 @@ st.set_page_config(layout="centered")
 
 #<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M852-212 732-332l56-56 120 120-56 56ZM708-692l-56-56 120-120 56 56-120 120Zm-456 0L132-812l56-56 120 120-56 56ZM108-212l-56-56 120-120 56 56-120 120Zm246-75 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-361Z"/></svg>")
 
-#st.markdown(
-  """
-  <style>
-  @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-  
-  html, body, [class*="css"] {
-  font-family: "Elms Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-  }
-  </style>
-  """,
-  unsafe_allow_html=True
-)
-
-
 
 US_AVERAGE = 7 + 2 / 60        # 7 hours 2 minutes
 WORLD_AVERAGE = 6 + 54 / 60    # 6 hours 54 minutes
