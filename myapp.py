@@ -146,7 +146,7 @@ show_bar_graph(
     "Daily Smartphone Screen Time Comparison",
 )
 
-st.info(f"Your estimated total daily screen time is **{total_screen_time:.2f} hours**.")
+st.warning(f"Your estimated total daily screen time is **{total_screen_time:.2f} hours**.")
 st.caption("Note: Information gathered from World Health Organization and Statista, as of 2024. Full works cited list available in the final section of this app.")
 
 show_2nd_bar_graph(
