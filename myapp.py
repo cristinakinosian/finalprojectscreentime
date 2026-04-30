@@ -511,7 +511,7 @@ st.divider()
 # -----------------------------
 # Section 9: Final summary
 # -----------------------------
-st.header("9. Final summary")
+st.header("Analysis and Summary of Your Results")
 
 strongest_category = max(category_scores, key=category_scores.get)
 weakest_category = min(category_scores, key=category_scores.get)
@@ -525,10 +525,14 @@ st.write(f"**Strongest strategy category:** {strongest_category}")
 st.write(f"**Needs the most improvement:** {weakest_category}")
 
 st.success(
-    "Main takeaway: the most effective approach is usually not one single strategy. "
-    "A stronger plan combines movement during unavoidable screen time, more friction against recreational screen use, "
+    "Remember: the most effective approach is usually not one single strategy. "
+    "A stronger plan is composite, incorporating strategies from all three categories: movement during unavoidable screen time, more friction against recreational screen use, "
     "and easier access to physical activity or active alternatives."
 )
+
+st.write("By tailoring multiple interventions to both the individual and their environment, it becomes more possible to create long-term reductions in sedentary screen time, thereby maximizing improvements in overall health and well-being. "
+        )
+st.subheader("However, any strategy can fall flat if implemented half-heartedly or mindlessly. The only viable path to success requires mindfulness of our behavioral intentions, goals, and awareness, thus intentional implementation of strategies is necessary to change deeply ingrained habits related to screen use. This understanding creates the best opportunity for success, creating an intrinsic motivation to combine behavioral, environmental, and technological approaches into a tailored, comprehensive solution. For example, Keadle et. al. found that intervention models combining multiple strategies such as education of health risks, earning screen time through exercise, automated app time limits, and text reminders of goals led to a tremendous decrease in screen use, exceeding reductions achieved by education-only approaches (Keadle et. al., 2025). These findings suggest that behavior change is most effectively achieved when interventions simultaneously target excessive screen use from behavioral, physical, and digital perspectives."
 
 st.title("What Progress Actually Looks Like")
 rainbow_spiral()
