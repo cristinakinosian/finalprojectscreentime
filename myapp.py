@@ -218,9 +218,9 @@ number_of_symptoms = sum(row["User Experiences This?"] == "Yes" for row in sympt
 show_table(symptom_results, "Opportunities for QOL Improvement: Your Symptom List")
 
 if number_of_symptoms == 0:
-    st.success("Wow, that's great! You may not be noticing obvious side effects right now."
-              "Excessive sedentary screen time has been associated with sleep problems,"
-              "mental health challenges, eye strain, headaches, and body pain (Devi & Singh, 2023).
+    st.info(
+        "Wow, that's great! You may not be noticing obvious side effects right now. Excessive sedentary screen time has been associated with sleep problems, mental health challenges, eye strain, headaches, and body pain (Devi & Singh, 2023)."
+    )
 else:
     st.info(
         "You're not alone. Excessive sedentary screen time has been associated with sleep problems, mental health challenges, eye strain, headaches, and body pain (Devi & Singh, 2023)."
