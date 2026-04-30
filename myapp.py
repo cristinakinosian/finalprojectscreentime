@@ -139,21 +139,22 @@ with col3:
 
 total_screen_time = phone_screen_time + non_leisure_screen_time + recreational_screen_time
 
-st.subheader("Your Average vs. Others")
-show_bar_graph(
-    ["Your Average", "U.S. Average", "Worldwide Average"],
-    [phone_screen_time, US_AVERAGE, WORLD_AVERAGE],
-    "Daily Smartphone Screen Time Comparison",
-)
-
-st.warning(f":rainbow[Your estimated total daily screen time is **{total_screen_time:.2f} hours**.]")
-st.caption("Note: Information gathered from World Health Organization and Statista, as of 2024. Full works cited list available in the final section of this app.")
 
 show_2nd_bar_graph(
     ["Phone\nScreen Time", "Other Leisure\nScreen Time", "Unavoidable\nScreen Time", "Total\nScreen Time"],
     [phone_screen_time, recreational_screen_time, non_leisure_screen_time, total_screen_time],
     "Screen Time Source Distribution by Category",
 )
+
+st.warning(f":rainbow[YOUR TOTAL DAILY SCREEN TIME IS **{total_screen_time:.2f} HOURS**.]")
+
+st.subheader("Your Average vs. Others")
+show_bar_graph(
+    ["Your Average", "U.S. Average", "Worldwide Average"],
+    [phone_screen_time, US_AVERAGE, WORLD_AVERAGE],
+    "Daily Smartphone Screen Time Comparison",
+)
+st.caption("Note: Information gathered from World Health Organization and Statista, as of 2024. Full works cited list available in the final section of this app.")
 
 st.divider()
 
@@ -193,20 +194,21 @@ st.divider()
 #-----------------------------
 
 st.header("3. Symptom checklist")
-st.write("Which of the following have you experienced after high-screen-time days?")
+st.write("Do you experience any of the following side effects, especially after high-screen-time days?")
 
 symptoms = [
     "difficulty sleeping",
     "anxiety",
     "depression",
-    "eye strain or headaches",
+    "eye strain",
+    "headaches",
     "neck, shoulder, or back pain",
     "difficulty focusing",
 ]
 
 symptom_results = []
 for symptom in symptoms:
-    experienced = st.checkbox(f"I have experienced {symptom}", key=f"symptom_{symptom}")
+    experienced = st.checkbox(f"{symptom}", key=f"symptom_{symptom}")
     symptom_results.append({
         "Symptom": symptom,
         "User Experiences This?": "Yes" if experienced else "No",
@@ -216,11 +218,13 @@ number_of_symptoms = sum(row["User Experiences This?"] == "Yes" for row in sympt
 show_table(symptom_results, "Opportunities for QOL Improvement: Your Symptom List")
 
 if number_of_symptoms == 0:
-    st.success("Wow, that's great! You may not be noticing obvious side effects right now.")
+    st.success("Wow, that's great! You may not be noticing obvious side effects right now."
+              "Excessive sedentary screen time has been associated with sleep problems,"
+              "mental health challenges, eye strain, headaches, and body pain (Devi & Singh, 2023).
 else:
     st.info(
         "You're not alone. Excessive sedentary screen time has been associated with sleep problems, "
-        "mental health challenges, eye strain, headaches, and body pain."
+        "mental health challenges, eye strain, headaches, and body pain (Devi & Singh, 2023)."
     )
 
 st.divider()
@@ -466,7 +470,7 @@ st.success(
     "A stronger plan combines movement during unavoidable screen time, more friction against recreational screen use, "
     "and easier access to physical activity or active alternatives."
 )
-with st.expander("CLICK HERE TO VIEW MY ANNOTATED BIBLIOGRAPHY AND LEARN MORE", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
+with st.expander("VIEW MY ANNOTATED BIBLIOGRAPHY TO LEARN MORE", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
     st.write('''
              Banerski, G., Abramczuk, K., Muczyński, B., & Cnotkowski, D. (2025). Transforming Sedentary Lifestyles: The impact of remote VR and flat-screen interventions on affective attitudes towards physical exertion, guided by avatar or human trainers. Psychology of Sport and Exercise, 76(102740). https://doi.org/10.1016/j.psychsport.2024.102740 
 This study analyzed the replacement of flat-screen use with active digital physical activity via Virtual Reality. The authors investigate how virtual reality (VR) exercise compares to traditional flat-screen workouts in shaping attitudes toward physical exertion. Using a factorial design, 108 participants completed short home-based HIIT workouts through the use of either a flat-screen human-led exercise video, or a VR digital trainer-led exercise game. The study found that VR exercise significantly improved participants’ attitudes toward physical activity, while flat-screen workouts produced no meaningful change. The results suggest that immersive VR environments enhance enjoyment, perceived competence, and motivation to exercise, making them a promising tool for reducing sedentary behavior.
@@ -489,4 +493,11 @@ This study examined the effectiveness of family-based interventions in reducing 
 
              )'''
              )
+with st.expander("Additional References & Data Sources Listed Here", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
+    st.write('''
+        Devi, Khumukcham A.; Singh, Sudhakar K.1. The hazards of excessive screen time: Impacts on physical health, mental health, and overall well-being. Journal of Education and Health Promotion 12(1):413, November 2023. | DOI: 10.4103/jehp.jehp_447_23 
+        ''')
     
+st.json({'foo':'bar','fu':'ba'})
+st.metric(label="Temp", value="273 K", delta="1.2 K")
+ 
