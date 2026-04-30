@@ -223,8 +223,7 @@ if number_of_symptoms == 0:
               "mental health challenges, eye strain, headaches, and body pain (Devi & Singh, 2023).
 else:
     st.info(
-        "You're not alone. Excessive sedentary screen time has been associated with sleep problems, "
-        "mental health challenges, eye strain, headaches, and body pain (Devi & Singh, 2023)."
+        "You're not alone. Excessive sedentary screen time has been associated with sleep problems, mental health challenges, eye strain, headaches, and body pain (Devi & Singh, 2023)."
     )
 
 st.divider()
