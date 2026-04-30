@@ -98,9 +98,9 @@ st.header("Background")
 st.subheader('You are likely accumulating sedentary screen time while reading this sentence right now.')
 st.markdown('In the last decade, sedentary screen time has increased exponentially, with research consistently concluding that screen-based sedentary activities increase the risk of poor physical and mental health. In fact, sedentary *screen* time specifically is more detrimental to health than any other sedentary non-screen activities, according to research by Keadle et. al. in 2025.')
 st.subheader('So, how can we change our screen habits to improve longevity and quality of life?')
-with st.expander(":rainbow-background[Click here if you have ever wondered why it is so difficult to implement healthier routines]", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
+with st.expander(":rainbow-background[Click here]", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
     st.write('''Author James Clear may have answers for you. In his best-selling 2018 book, Atomic Habits, Clear describes his well-researched techniques for successful habit formation and habit cessation. The central idea is to effectively decrease friction by making it easier to choose a good habit, and increase friction by making it harder to choose a bad habit. A combination of both will therefore yield the best results, thus we will explore various examples of specific strategies to accomplish this goal. After completing this interactive questionnaire, you will be armed with a customized plan for improving your health through specific sedentary screen time interventions that work for you and your circumstances. You will also be able to estimate your daily screen time, compare it with common averages, reflect on possible side effects, and choose personalized strategies for reducing sedentary screen use, backed by habit formation theory.''')
-st.subheader('We can start here:')
+
 st.divider()
 
 # user screen habits 
@@ -141,7 +141,7 @@ total_screen_time = phone_screen_time + non_leisure_screen_time + recreational_s
 
 st.subheader("Your Average vs. Others")
 show_bar_graph(
-    [":rainbow[Your Average]", "U.S. Average", "Worldwide Average"],
+    ["Your Average", "U.S. Average", "Worldwide Average"],
     [phone_screen_time, US_AVERAGE, WORLD_AVERAGE],
     "Daily Smartphone Screen Time Comparison",
 )
@@ -166,19 +166,20 @@ st.write(
 )
 
 guess = st.slider(
-    "How many hours of recreational screen time per day do you think is the threshold for negative health outcomes?",
+    "Use the slider to guess how many hours of recreational screen time per day is the threshold for negative health outcomes",
     min_value=0.0,
     max_value=18.0,
     value=3.0,
     step=0.5,
 )
 
-if guess == NEGATIVE_THRESHOLD:
-    st.success("Precisely! The threshold is about 2 hours per day, according to the World Health Organization and many studies.")
-elif guess < NEGATIVE_THRESHOLD:
-    st.warning("Not quite — the threshold used in this project is a little higher: about 2 hours per day.")
-else:
-    st.warning("It is actually less than that: only 2 hours per day.")
+with st.expander(":rainbow-background[Click here]", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
+    if guess == NEGATIVE_THRESHOLD:
+        st.success("Precisely! The threshold is about 2 hours per day, according to the World Health Organization and many studies.")
+    elif guess < NEGATIVE_THRESHOLD:
+        st.warning("Not quite — the threshold used in this project is a little higher: about 2 hours per day.")
+    else:
+        st.warning("It is actually less than that: only 2 hours per day.")
 
 st.write(
     "If the excessive recreational screen-time threshold is regularly exceeded, being otherwise physically active "
