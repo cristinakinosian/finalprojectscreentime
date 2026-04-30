@@ -7,8 +7,13 @@ primaryColor = "#E08396"
 backgroundColor = "#FAF0E6"
 
 # Sidebar and Widget background (Sage)
-secondaryBackgroundColor = "#E08396"
+secondaryBackgroundColor = "#DCE0B8"
 
 # Text color (Dark Brown)
 textColor = "#5D4037"
 
+# font 
+font = "serif"
+
+# border color (Rose pink)
+borderColor = ""#E08396"
