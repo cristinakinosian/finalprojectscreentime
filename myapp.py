@@ -10,6 +10,8 @@ import pandas as pd
 import streamlit as st
 from scipy.interpolate import interp1d
 from scipy.optimize import curve_fit
+from mpl_toolkits import mplot3d
+
 
 # -----------------------------
 # Page setup: customization
@@ -88,6 +90,38 @@ def show_donut_chart(labels, data, title):
 def linear_model(x, m, b):
     """Simple linear model used for curve fitting."""
     return m * x + b
+
+
+def show_3d_rainbow_spiral():
+    """Display a 3D rainbow spiral in Streamlit."""
+    
+    # Set up the figure and 3D axes
+    fig = plt.figure(figsize=(10, 7))
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Generate data for the spiral
+    z = np.linspace(0, 20, 1000)
+    x = np.sin(z)
+    y = np.cos(z)
+
+    # Create the rainbow effect
+    spiral = ax.scatter3D(x, y, z, c=z, cmap='hsv')
+
+    # Labels and title
+    ax.set_title('3D Rainbow Spiral')
+    ax.set_xlabel('X Axis')
+    ax.set_ylabel('Y Axis')
+    ax.set_zlabel('Z Axis (Height)')
+
+    # Add color bar
+    fig.colorbar(spiral, ax=ax, label='Height / Hue')
+
+    # Display in Streamlit
+    st.pyplot(fig)
+
+    # Close figure to prevent memory issues
+    plt.close(fig)
+
 
 
 # Top of web page
@@ -315,6 +349,9 @@ with st.expander("LEARN MORE ABOUT HABIT FORMATION PRINCIPLES", expanded=False, 
         "For more information on the habit formation principles and how they apply to behavior change, check out James Clear's book *Atomic Habits* or his website at https://jamesclear.com/."
     )
 
+
+st.divider()
+
 # -----------------------------
 # section 6: Strategy checklist
 # -----------------------------
@@ -461,6 +498,7 @@ else:
 st.divider()
 
 
+
 # -----------------------------
 # Section 9: Final summary
 # -----------------------------
@@ -482,6 +520,11 @@ st.success(
     "A stronger plan combines movement during unavoidable screen time, more friction against recreational screen use, "
     "and easier access to physical activity or active alternatives."
 )
+
+st.title("What Progress Actually Looks Like")
+show_3d_rainbow_spiral()
+
+
 with st.expander("VIEW MY ANNOTATED BIBLIOGRAPHY TO LEARN MORE", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
     st.write('''
              Banerski, G., Abramczuk, K., Muczyński, B., & Cnotkowski, D. (2025). Transforming Sedentary Lifestyles: The impact of remote VR and flat-screen interventions on affective attitudes towards physical exertion, guided by avatar or human trainers. Psychology of Sport and Exercise, 76(102740). https://doi.org/10.1016/j.psychsport.2024.102740 
