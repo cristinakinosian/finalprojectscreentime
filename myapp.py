@@ -281,6 +281,49 @@ else:
 
 st.divider()
 
+# -----------------------------
+# Section 8: Interpolation and curve fitting example
+# -----------------------------
+st.header("Your Risk of Experiencing Side Effects")
+st.write(
+    "This section uses interpolation and curve fitting to estimate a simple trend: as sedentary screen time hours increase, so does the risk of experiencing negative symptoms. "
+)
+
+sample_hours = np.array([0, 1, 2, 3, 4, 5, 6], dtype=float)
+sample_risk_score = np.array([1, 1.2, 1.8, 2.7, 3.9, 5.2, 6.8], dtype=float)
+
+interpolator = interp1d(sample_hours, sample_risk_score, kind="linear", fill_value="extrapolate")
+estimated_risk_score = float(interpolator(total_screen_time))
+
+fit_params, _ = curve_fit(linear_model, sample_hours, sample_risk_score)
+modeled_x = np.linspace(0, 6, 100)
+modeled_y = linear_model(modeled_x, *fit_params)
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.scatter(sample_hours, sample_risk_score, label="Your screen risk data", color="orange")
+ax.plot(modeled_x, modeled_y, label="Curve fit trend")
+ax.scatter([recreational_screen_time], [estimated_risk_score], label="Your estimate")
+ax.set_xlabel("Recreational screen time, in hours")
+ax.set_ylabel("Estimated risk score")
+ax.set_title("Your Risk of Experiencing Negative Symptoms due to Screen Time")
+ax.legend()
+fig.tight_layout()
+st.pyplot(fig)
+plt.close(fig)
+
+st.caption(
+    f"This simple interpolation model estimates your risk score to be {estimated_risk_score:.2f}. "
+    "Note: This is a visualization tool, not a medical diagnostic."
+)
+# maybe an if statement based on their score, categorizing them as low, moderate, or high risk, with a corresponding message about how reducing recreational screen time could potentially improve their health outcomes.
+if estimated_risk_score < 3:
+    st.info("Your estimated risk score is low. Consider maintaining your current screen time habits.")
+elif estimated_risk_score < 5:
+    st.warning("Your estimated risk score is moderate. Reducing recreational screen time would improve your health outcomes.")
+else:
+    st.error("Your estimated risk score is high. Reducing recreational screen time is strongly recommended.")
+
+st.divider()
 
 # -----------------------------
 # to continue or not to continue...that is the question
@@ -471,52 +514,7 @@ recommendation_df = show_table(recommendations, "Recommendations for Optimizatio
 st.divider()
 
 
-# -----------------------------
-# Section 8: Interpolation and curve fitting example
-# -----------------------------
-st.header("Your Risk of Experiencing Side Effects")
-st.write(
-    "This section uses interpolation and curve fitting to estimate a simple trend: as sedentary screen time hours increase, so does the risk of experiencing negative symptoms. "
-)
-
-sample_hours = np.array([0, 1, 2, 3, 4, 5, 6], dtype=float)
-sample_risk_score = np.array([1, 1.2, 1.8, 2.7, 3.9, 5.2, 6.8], dtype=float)
-
-interpolator = interp1d(sample_hours, sample_risk_score, kind="linear", fill_value="extrapolate")
-estimated_risk_score = float(interpolator(total_screen_time))
-
-fit_params, _ = curve_fit(linear_model, sample_hours, sample_risk_score)
-modeled_x = np.linspace(0, 6, 100)
-modeled_y = linear_model(modeled_x, *fit_params)
-
-fig, ax = plt.subplots(figsize=(8, 5))
-ax.scatter(sample_hours, sample_risk_score, label="Your screen risk data", color="orange")
-ax.plot(modeled_x, modeled_y, label="Curve fit trend")
-ax.scatter([recreational_screen_time], [estimated_risk_score], label="Your estimate")
-ax.set_xlabel("Recreational screen time, in hours")
-ax.set_ylabel("Estimated risk score")
-ax.set_title("Your Risk of Experiencing Negative Symptoms due to Screen Time")
-ax.legend()
-fig.tight_layout()
-st.pyplot(fig)
-plt.close(fig)
-
-st.caption(
-    f"This simple interpolation model estimates your risk score to be {estimated_risk_score:.2f}. "
-    "Note: This is a visualization tool, not a medical diagnostic."
-)
-# maybe an if statement based on their score, categorizing them as low, moderate, or high risk, with a corresponding message about how reducing recreational screen time could potentially improve their health outcomes.
-if estimated_risk_score < 3:
-    st.info("Your estimated risk score is low. Consider maintaining your current screen time habits.")
-elif estimated_risk_score < 5:
-    st.warning("Your estimated risk score is moderate. Reducing recreational screen time would improve your health outcomes.")
-else:
-    st.error("Your estimated risk score is high. Reducing recreational screen time is strongly recommended.")
-
-st.divider()
-
-
-st.title("⌛ How much time will you have lost looking at screens over the course of your life?")
+st.header("⌛ How much time will you have lost looking at screens over the course of your life, if current screen habits remain unchanged?")
 st.write("Visualize how much of your life is spent on screens.")
 
 
@@ -537,7 +535,7 @@ df = pd.DataFrame({
 df.set_index('Age', inplace=True)
 
 # --- Visualization ---
-st.subheader(f"Projection for {total_screen_time} hours/day")
+st.subheader(f"Projection at {total_screen_time} hours/day")
 st.line_chart(df)
 
 # --- Metrics ---
@@ -551,7 +549,7 @@ st.subheader(f"At {total_screen_time} hours per day, you spend roughly "
 # -----------------------------
 # Section 9: Final summary
 # -----------------------------
-st.header("Analysis and Summary of Your Results")
+st.title(":rainbow[Final Summary & Main Takeaways]")
 
 strongest_category = max(category_scores, key=category_scores.get)
 weakest_category = min(category_scores, key=category_scores.get)
@@ -572,9 +570,11 @@ st.success(
 
 st.write("By tailoring multiple interventions to both the individual and their environment, it becomes more possible to create long-term reductions in sedentary screen time, thereby maximizing improvements in overall health and well-being. "
         )
-st.subheader("However, any strategy can fall flat if implemented half-heartedly or mindlessly. The only viable path to success requires mindfulness of our behavioral intentions, goals, and awareness, thus intentional implementation of strategies is necessary to change deeply ingrained habits related to screen use. This understanding creates the best opportunity for success, creating an intrinsic motivation to combine behavioral, environmental, and technological approaches into a tailored, comprehensive solution. For example, Keadle et. al. found that intervention models combining multiple strategies such as education of health risks, earning screen time through exercise, automated app time limits, and text reminders of goals led to a tremendous decrease in screen use, exceeding reductions achieved by education-only approaches (Keadle et. al., 2025). These findings suggest that behavior change is most effectively achieved when interventions simultaneously target excessive screen use from behavioral, physical, and digital perspectives.")
+st.subheader("Disclaimer: Any strategy can fall flat if implemented half-heartedly or mindlessly. Intentional, consistent implementation of strategies is necessary to change deeply ingrained habits related to screen use.")
+st.text("This understanding creates the best opportunity for success, creating an intrinsic motivation to combine behavioral, environmental, and technological approaches into a tailored, comprehensive solution. For example, Keadle et. al. found that intervention models combining multiple strategies such as education of health risks, earning screen time through exercise, automated app time limits, and text reminders of goals led to a tremendous decrease in screen use, exceeding reductions achieved by education-only approaches (Keadle et. al., 2025). These findings suggest that behavior change is most effectively achieved when interventions simultaneously target excessive screen use from behavioral, physical, and digital perspectives.")
 
-st.title("What Progress Actually Looks Like")
+st.title(":rainbow[Do your best every day, and remember: **progress is not linear.**]")
+st.title("This is What Progress Actually Looks Like")
 rainbow_spiral()
 
 
