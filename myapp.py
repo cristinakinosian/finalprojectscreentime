@@ -65,7 +65,7 @@ def show_table(data, title):
     st.dataframe(df, use_container_width=True, hide_index=True)
     return df
 
-colors2 = ['#D18AA1', '#FFC296', '#DCE0B8', '#BAAFC7']
+colors3 = ['#D18AA1', '#FFC296', '#BAAFC7']
 
 def show_donut_chart(labels, data, title):
     """donut chart using plotly."""
@@ -81,8 +81,8 @@ def show_donut_chart(labels, data, title):
                 values=data,
                 hole=0.6,  # Controls donut thickness (similar to your 0.65 circle)
                 pull=[0.05] * len(data),  # Equivalent to explode
-                marker=dict(colors=colors2),
-                textinfo="percent+label",
+                marker=dict(colors=colors3),
+                textinfo="percent",
                 insidetextorientation="radial"
             )
         ]
