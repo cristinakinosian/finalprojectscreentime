@@ -215,7 +215,7 @@ for symptom in symptoms:
     })
 
 number_of_symptoms = sum(row["User Experiences This?"] == "Yes" for row in symptom_results)
-show_table(symptom_results, "Opportunities for QOL Improvement: Your Symptom List")
+show_table(symptom_results, "Opportunities for Quality of Life Improvement if Screen Time is Reduced")
 
 if number_of_symptoms == 0:
     st.info(
@@ -232,7 +232,7 @@ st.divider()
 # -----------------------------
 # to continue or not to continue...that is the question
 # -----------------------------
-st.header("4. Motivation check")
+st.header("Continue?")
 
 wants_to_continue = st.radio(
     "Do you want to proceed and learn how to improve your quality of life and reduce these symptoms?",
@@ -261,7 +261,7 @@ st.divider()
 # -----------------------------
 # current strategies 
 # -----------------------------
-st.header("5. Current screen-time reduction strategies")
+st.header("Current screen-time reduction strategies")
 st.write("Do you already use any of the following strategies?")
 
 current_strategies = [
@@ -294,10 +294,20 @@ st.header("How to choose effective strategies for you")
 st.write(
     "The most effective strategies for reducing sedentary screen time are those that fit well with your lifestyle, preferences, and environment. "
     "In the next section, you will be able to choose from a variety of evidence-based strategies, organized into three categories based on habit formation principles: "
-    "1) Movement during unavoidable screen time, such as work or school,"
-    "2) Increasing friction against recreational screen use, i.e., making it less convenient to use screens," 
-    "3) Decreasing friction for physical activity, i.e., making it easier and more rewarding to choose active alternatives."
 )
+
+st.subheader(":rainbow[1. Incorporating movement during unavoidable screen time, such as work or school.]")
+st.write("In some environments, such as work or school, screen use is often unavoidable. Therefore, to reduce sedentary screen behavior, the best interventions are those that allow for physical activity during screen use. Tools such as walking pads, pedal devices, stationary bikes, and standing desks allow individuals to remain engaged with screens while still being physically active. In a 2020 umbrella review spanning 17 different systematic reviews and meta-analyses, workplace interventions that allow for physical activity were shown to decrease sedentary time drastically, by 40–100 minutes per workday (Nguyen, et. al., 2020). Of all the strategies examined, such environmental changes were “shown to yield the most significant effect size” (Nguyen et. al., 2020). The most common environmental modification of this type seen in adult studies was the implementation of a tool aimed at decreasing sedentary time, and standing desks as a tool were associated with the most improvement. Additionally, interventions that targeted sedentary screen behavior specifically were more effective than interventions focused solely on increasing physical activity. (Nguyen, P. et. al., 2020). ")
+
+
+st.subheader(":rainbow[2. Increasing friction against screen use during your free time, i.e., making it less convenient to use screens.]")
+st.write("Interventions that make excessive screen use inconvenient are also proven to be highly effective. Examples of successful device-oriented strategies include digital lockouts, deleting or hiding apps, screen time limits, and reminder prompts on devices. These techniques introduce barriers that discourage prolonged use and have been shown to result in “consistent reductions in daily screen time across studies” [CK4.1](Buchanan, L.R. et. al., 2016). In Atomic Habits, James Clear states “before you try to increase your willpower, try to decrease the friction in your environment” (Clear, 2018). [CK5.1]Environmental modifications, such as increasing physical distance from devices, creating phone-free zones, or rearranging physical spaces, all function to encourage alternative activities[CK6.1]. Social environment also influences behavior, for example, family-based and socially supported interventions further enhance effectiveness by addressing broader environmental and social influences (Perrino et. al., 2022). Social, device-based, and environmental modifications all work synergistically to effectively reduce screen time.")
+
+
+st.subheader(":rainbow[3. Decreasing friction to engage in physical activity, i.e., making it easier and more rewarding to choose active alternative activities.]")
+st.write("Incorporating movement into screen time, rather than eliminating screen time altogether, is also effective in a recreational setting. Strategies like temptation bundling, environmental modifications, and choosing active video games improve health by replacing sedentary screen time with active screen time. Temptation bundling is the act of pairing an action you need to do with an action you want to do, such as only watching your favorite TV show while walking on a treadmill (Clear, 2018). Similarly, environmental modifications can look like introducing visual cues in typical sedentary screen time areas of the home; for example, placing a yoga mat in front of the TV to remind you to stretch while watching a show. Lastly, the strategic use of physically engaging screen-based games encourages movement. Examples of active video gaming include the use of Wii Fit, Dance Dance Revolution, Nintendo Switch fitness games, and Virtual Reality based games, all of which can be played from home. This strategy is particularly favorable, as recent research on virtual reality exercise demonstrates that immersive, movement-based screen experiences enhance enjoyment, perceived competence, and motivation to exercise, making them a promising tool for reducing sedentary behavior (Banerski et. Al., 2025).")
+
+
 with st.expander("LEARN MORE ABOUT HABIT FORMATION PRINCIPLES", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
     st.write(
         "The habit formation principles that guide the strategy categories are based on the idea of manipulating cues, cravings, responses, and rewards to make good habits more likely and bad habits less likely (Clear, 2018). "
@@ -309,27 +319,29 @@ with st.expander("LEARN MORE ABOUT HABIT FORMATION PRINCIPLES", expanded=False, 
 # section 6: Strategy checklist
 # -----------------------------
 
-st.header("6. Screen-time reduction strategies you might use")
+st.header("Build Your Personalized Plan of Strategies")
 
 strategy_categories = {
     "Movement During Unavoidable Screen Time": [
-        "standing desk",
-        "walking pad",
-        "under-desk pedal device",
-        "taking movement breaks during work/school screen time",
+        "working at a standing desk",
+        "using a walking pad or treadmill while working",
+        "using an under-desk pedal or elliptical",
+        "scheduling frequent movement breaks during work",
+        "finding a coworker to take daily walking breaks with",
     ],
     "Increasing Friction Against Recreational Screen Use": [
-        "app time limits",
+        "setting up automated app time limits/lockouts",
         "disabling non-essential notifications",
         "deleting or hiding distracting apps",
-        "keeping phone away from bed",
-        "creating screen-free zones",
+        "keeping devices in another room when unneeded",
+        "establishing screen-free zones/hours at home",
     ],
     "Decreasing Friction for Physical Activity": [
         "placing workout equipment in visible areas",
-        "watching TV only while walking/stretching",
+        "only using screens as a reward during/after exercise",
         "using VR fitness or active video games",
-        "planning non-screen hobbies in advance",
+        "scheduling non-screen activities on a regular basis",
+        "wearing a smartwatch that prompts movement"
     ],
 }
 
