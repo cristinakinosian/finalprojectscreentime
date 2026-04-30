@@ -24,6 +24,11 @@ st.set_page_config(layout="centered")
 
 #<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M852-212 732-332l56-56 120 120-56 56ZM708-692l-56-56 120-120 56 56-120 120Zm-456 0L132-812l56-56 120 120-56 56ZM108-212l-56-56 120-120 56 56-120 120Zm246-75 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-361Z"/></svg>")
 
+# --- Sidebar Inputs ---
+st.sidebar.header("User Settings")
+current_age = st.sidebar.number_input("Current Age", min_value=1, max_value=100, value=25)
+life_expectancy = st.sidebar.number_input("Life Expectancy", min_value=1, max_value=120, value=80)
+
 
 US_AVERAGE = 7 + 2 / 60        # 7 hours 2 minutes
 WORLD_AVERAGE = 6 + 54 / 60    # 6 hours 54 minutes
@@ -510,15 +515,10 @@ else:
 
 st.divider()
 
-st.set_page_config(page_title="Screen Time Wasted Calculator")
 
-st.title("Screen Time Wasted Calculator 📱⌛")
+st.title("⌛ How much time will you have lost looking at screens over the course of your life?")
 st.write("Visualize how much of your life is spent on screens.")
 
-# --- Sidebar Inputs ---
-st.sidebar.header("User Settings")
-current_age = st.sidebar.number_input("Current Age", min_value=1, max_value=100, value=25)
-life_expectancy = st.sidebar.number_input("Life Expectancy", min_value=1, max_value=120, value=80)
 
 # --- Calculations ---
 # Hours per year = total_screen_time * 365.25
@@ -542,9 +542,9 @@ st.line_chart(df)
 
 # --- Metrics ---
 total_wasted = years_wasted[-1]
-st.metric(label="Total Years Wasted by Life Expectancy", value=f"{total_wasted:.2f} years")
+st.metric(label="Total Years Wasted by Life Expectancy", value=f"{total_wasted:.2f} years",border=True)
 
-st.info(f"At {total_screen_time} hours per day, you spend roughly "
+st.subheader(f"At {total_screen_time} hours per day, you spend roughly "
         f"{((total_screen_time/24)*100):.1f}% of your time alive looking at screens.")
 
 
