@@ -11,6 +11,7 @@ import streamlit as st
 from scipy.interpolate import interp1d
 from scipy.optimize import curve_fit
 from mpl_toolkits import mplot3d
+import plotly.graph_objects as go
 
 
 # -----------------------------
@@ -91,40 +92,47 @@ def linear_model(x, m, b):
     """Simple linear model used for curve fitting."""
     return m * x + b
 
+def rainbow_spiral():
+    """Display an interactive 3D spiral slide/ramp in Streamlit."""
 
-def show_3d_rainbow_spiral():
-    """displays 3d rainbow slide"""
-
-    # Create figure
-    fig = plt.figure(figsize=(10, 7))
-    ax = fig.add_subplot(111, projection='3d')
-
-    # Parameters for spiral surface
-    theta = np.linspace(0, 6 * np.pi, 200)   # controls how many turns
-    r = np.linspace(0.5, 2, 50)              # controls width of the ramp
+    # Parameters for spiral slide
+    theta = np.linspace(0, 6 * np.pi, 200)
+    r = np.linspace(0.8, 2.2, 50)
 
     theta, r = np.meshgrid(theta, r)
 
-    # Parametric equations
+    # Parametric surface equations
     x = r * np.cos(theta)
     y = r * np.sin(theta)
-    z = theta  # height increases as it spirals
+    z = theta * 0.5
 
-    # Plot surface
-    surface = ax.plot_surface(x, y, z, cmap='hsv', edgecolor='none')
+    # Create interactive surface
+    fig = go.Figure(
+        data=[
+            go.Surface(
+                x=x,
+                y=y,
+                z=z,
+                surfacecolor=z,
+                colorscale="HSV",
+                showscale=True,
+                colorbar=dict(title="Height")
+            )
+        ]
+    )
 
-    # Labels
-    ax.set_title('3D Spiral Ramp')
-    ax.set_xlabel('X Axis')
-    ax.set_ylabel('Y Axis')
-    ax.set_zlabel('Height')
+    fig.update_layout(
+        title="Progress",
+        scene=dict(
+            xaxis_title="X Axis",
+            yaxis_title="Y Axis",
+            zaxis_title="Height"
+        ),
+        width=800,
+        height=700
+    )
 
-    # Color bar
-    fig.colorbar(surface, ax=ax, label='Height / Hue')
-
-    # Show in Streamlit
-    st.pyplot(fig)
-    plt.close(fig)
+    st.plotly_chart(fig, use_container_width=True)
     
 # Top of web page
 
@@ -524,7 +532,7 @@ st.success(
 )
 
 st.title("What Progress Actually Looks Like")
-show_3d_rainbow_spiral()
+rainbow_spiral()
 
 
 with st.expander("VIEW MY ANNOTATED BIBLIOGRAPHY TO LEARN MORE", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
