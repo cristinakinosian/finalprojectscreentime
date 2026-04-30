@@ -160,14 +160,14 @@ st.divider()
 
 # Screen time threshold guess 
 
-st.header("2. Recreational screen-time threshold")
+st.subheader("Use the slider to guess how many hours of recreational screen time we can have before we are at risk of negative side effects and longterm negative health outcomes")
 st.write(
-    "Screen time for recreation can feel relaxing, but excessive sedentary recreational screen time "
+    "Screen time for recreation can feel relaxing and is okay in moderation, but excessive sedentary recreational screen time "
     "is consistently linked to negative health outcomes."
 )
 
 guess = st.slider(
-    "Use the slider to guess how many hours of recreational screen time per day is the threshold for negative health outcomes",
+    "Guess the maximum number of daily recreational sedentary screen time hours that is recommended to avoid negative health outcomes",
     min_value=0.0,
     max_value=18.0,
     value=3.0,
@@ -193,7 +193,7 @@ st.divider()
 # symptoms checklist 
 #-----------------------------
 
-st.header("3. Symptom checklist")
+st.header("Screen Use Side Effects")
 st.write("Do you experience any of the following side effects, especially after high-screen-time days?")
 
 symptoms = [
@@ -287,6 +287,7 @@ else:
 
 st.divider()
 
+
 # -----------------------------
 # add bridge here about habit formation principles and how they will be applied in the next section
 st.header("How to choose effective strategies for you")
@@ -377,7 +378,7 @@ st.divider()
 # -----------------------------
 # Section 7: Personalized recommendations
 # -----------------------------
-st.header("7. Personalized intervention recommendations")
+st.header("Balancing Your Strategies")
 
 recommendations = []
 for category, strategies in strategy_categories.items():
@@ -397,7 +398,7 @@ for category, strategies in strategy_categories.items():
         "Recommendation": recommendation,
     })
 
-recommendation_df = show_table(recommendations, "Personalized Intervention Recommendations")
+recommendation_df = show_table(recommendations, "Recommendations for Optimization")
 
 st.divider()
 
@@ -497,6 +498,6 @@ with st.expander("Additional References & Data Sources Listed Here", expanded=Fa
         Devi, Khumukcham A.; Singh, Sudhakar K.1. The hazards of excessive screen time: Impacts on physical health, mental health, and overall well-being. Journal of Education and Health Promotion 12(1):413, November 2023. | DOI: 10.4103/jehp.jehp_447_23 
         ''')
     
-st.json({'foo':'bar','fu':'ba'})
-st.metric(label="Temp", value="273 K", delta="1.2 K")
+
+# st.metric(label="Temp", value="273 K", delta="1.2 K")
  
