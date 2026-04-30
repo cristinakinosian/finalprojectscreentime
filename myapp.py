@@ -111,9 +111,7 @@ def linear_model(x, m, b):
 
 st.title("Final Project: How to Improve Your Health Through Strategic Sedentary Screen Time Interventions")
 st.header("Introduction")
-st.subheader('You are likely accumulating sedentary screen time while reading this sentence right now. 
-    In the last decade, sedentary screen time has increased exponentially, with research consistently concluding that screen-based sedentary activities increase the risk of poor physical and mental health.
-    In fact, sedentary *screen* time specifically is more detrimental to health than any other sedentary non-screen activities, according to research by Keadle et. al. in 2025.')
+st.subheader(You are likely accumulating sedentary screen time while reading this sentence right now. In the last decade, sedentary screen time has increased exponentially, with research consistently concluding that screen-based sedentary activities increase the risk of poor physical and mental health. In fact, sedentary *screen* time specifically is more detrimental to health than any other sedentary non-screen activities, according to research by Keadle et. al. in 2025.)
 st.write(
     'If you have ever wondered why it is so difficult to implement healthier routines, author James Clear may have answers for you. In his best-selling 2018 book, Atomic Habits, Clear describes his well-researched techniques for successful habit formation and habit cessation. 
     The central idea is to effectively decrease friction by making it easier to choose a good habit, and increase friction by making it harder to choose a bad habit. 
