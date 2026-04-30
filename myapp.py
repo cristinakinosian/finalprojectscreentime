@@ -92,8 +92,8 @@ def linear_model(x, m, b):
 
 # Top of web page
 
-st.title("Final Project: How to Improve Your Health Through Strategic Sedentary Screen Time Interventions")
-st.write("by :rainbow[**Cristina Kinosian**]")
+st.title("Optimize Your Health and Happiness by Minimizing Sedentary Screen Time")
+st.write("a project by :rainbow[**Cristina Kinosian**]")
 st.header("Background")
 st.subheader('You are likely accumulating sedentary screen time while reading this sentence right now.')
 st.markdown('In the last decade, sedentary screen time has increased exponentially, with research consistently concluding that screen-based sedentary activities increase the risk of poor physical and mental health. In fact, sedentary *screen* time specifically is more detrimental to health than any other sedentary non-screen activities, according to research by Keadle et. al. in 2025.')
