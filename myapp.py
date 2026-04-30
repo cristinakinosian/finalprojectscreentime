@@ -149,14 +149,15 @@ st.divider()
 
 # user screen habits 
 
-st.header("Enter your daily screen time values below")
+st.header("Your Average Daily Screen Time")
 st.subheader("***If you have a smartphone, you can find your average daily screen time in your device settings.***")
+st.subheader("Enter your best estimate of your average daily screen time, **in hours**, for each category.")
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
     phone_screen_time = st.number_input(
-        "Daily smartphone screen time average, in hours",
+        "Smartphone screen time",
         min_value=0.0,
         max_value=24.0,
         value=4.0,
@@ -166,7 +167,7 @@ with col1:
 
 with col2:
     non_leisure_screen_time = st.number_input(
-        "Unavoidable work and/or school screen time approximation, in hours",
+        "Work and/or school screen time",
         min_value=0.0,
         max_value=24.0,
         value=3.0,
@@ -176,7 +177,7 @@ with col2:
 
 with col3:
     recreational_screen_time = st.number_input(
-        "Other daily recreational screen time approximation, **not including smartphone**, in hours",
+        "Other screen time, e.g., video games, television, tablet",
         min_value=0.0,
         max_value=24.0,
         value=2.0,
