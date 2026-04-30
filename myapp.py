@@ -11,8 +11,18 @@ import streamlit as st
 from scipy.interpolate import interp1d
 from scipy.optimize import curve_fit
 
+# -----------------------------
+# Page setup: customization
+# -----------------------------
+st.set_page_config(
+    page_title="Reducing Sedentary Screen Time",
+    page_icon="☯︎",
+    layout="centered",
+)
+
 # Font style
-st.set_page_config(page_icon="<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M852-212 732-332l56-56 120 120-56 56ZM708-692l-56-56 120-120 56 56-120 120Zm-456 0L132-812l56-56 120 120-56 56ZM108-212l-56-56 120-120 56 56-120 120Zm246-75 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-361Z"/></svg>")
+st.set_page_config(page_icon="☯︎")
+#<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M852-212 732-332l56-56 120 120-56 56ZM708-692l-56-56 120-120 56 56-120 120Zm-456 0L132-812l56-56 120 120-56 56ZM108-212l-56-56 120-120 56 56-120 120Zm246-75 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-361Z"/></svg>")
 
 st.markdown(
   """
@@ -31,14 +41,6 @@ st.markdown(
 )
 
 
-# -----------------------------
-# Page setup
-# -----------------------------
-st.set_page_config(
-    page_title="Reducing Sedentary Screen Time",
-    page_icon="star",
-    layout="centered",
-)
 
 US_AVERAGE = 7 + 2 / 60        # 7 hours 2 minutes
 WORLD_AVERAGE = 6 + 54 / 60    # 6 hours 54 minutes
