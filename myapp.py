@@ -319,7 +319,7 @@ with st.expander("LEARN MORE ABOUT HABIT FORMATION PRINCIPLES", expanded=False, 
 # section 6: Strategy checklist
 # -----------------------------
 
-st.header("Build Your Personalized Plan of Strategies")
+st.header("☆ Build Your Personalized Plan")
 
 strategy_categories = {
     "Movement During Unavoidable Screen Time": [
