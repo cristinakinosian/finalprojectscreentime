@@ -21,7 +21,7 @@ st.set_page_config(layout="centered")
 
 #<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M852-212 732-332l56-56 120 120-56 56ZM708-692l-56-56 120-120 56 56-120 120Zm-456 0L132-812l56-56 120 120-56 56ZM108-212l-56-56 120-120 56 56-120 120Zm246-75 126-76 126 77-33-144 111-96-146-13-58-136-58 135-146 13 111 97-33 143ZM233-120l65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-361Z"/></svg>")
 
-st.markdown(
+#st.markdown(
   """
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
@@ -110,17 +110,20 @@ def linear_model(x, m, b):
 # Top of web page
 
 st.title("Final Project: How to Improve Your Health Through Strategic Sedentary Screen Time Interventions")
-st.header(":rainbow[Background]")
+st.write("by rainbow:[Cristina Kinosian]")
+st.header("Background")
 st.subheader('You are likely accumulating sedentary screen time while reading this sentence right now.')
 st.markdown('In the last decade, sedentary screen time has increased exponentially, with research consistently concluding that screen-based sedentary activities increase the risk of poor physical and mental health. In fact, sedentary *screen* time specifically is more detrimental to health than any other sedentary non-screen activities, according to research by Keadle et. al. in 2025.')
-st.write('If you have ever wondered why it is so difficult to implement healthier routines, author James Clear may have answers for you. In his best-selling 2018 book, Atomic Habits, Clear describes his well-researched techniques for successful habit formation and habit cessation. The central idea is to effectively decrease friction by making it easier to choose a good habit, and increase friction by making it harder to choose a bad habit. A combination of both will therefore yield the best results, thus we will explore various examples of specific strategies to accomplish this goal. After completing this interactive questionnaire, you will be armed with a customized plan for improving your health through specific sedentary screen time interventions that work for you and your circumstances. You will also be able to estimate your daily screen time, compare it with common averages, reflect on possible side effects, and choose personalized strategies for reducing sedentary screen use, backed by habit formation theory.')
+st.subheader('So, how can we change our screen habits to improve longevity and quality of life?')
+with st.expander("Click here if you have ever wondered why it is so difficult to implement healthier routines", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
+    st.write('''Author James Clear may have answers for you. In his best-selling 2018 book, Atomic Habits, Clear describes his well-researched techniques for successful habit formation and habit cessation. The central idea is to effectively decrease friction by making it easier to choose a good habit, and increase friction by making it harder to choose a bad habit. A combination of both will therefore yield the best results, thus we will explore various examples of specific strategies to accomplish this goal. After completing this interactive questionnaire, you will be armed with a customized plan for improving your health through specific sedentary screen time interventions that work for you and your circumstances. You will also be able to estimate your daily screen time, compare it with common averages, reflect on possible side effects, and choose personalized strategies for reducing sedentary screen use, backed by habit formation theory.''')
 
 st.divider()
 
 
 # user screen habits 
 
-st.header("1. Current screen habits?")
+st.header("What are your current screen habits?")
 st.write("If you have a smartphone, you can find your average daily screen time in your device settings.")
 
 col1, col2, col3 = st.columns(3)
