@@ -29,7 +29,6 @@ st.sidebar.header("User Settings")
 current_age = st.sidebar.number_input("Current Age", min_value=1, max_value=100, value=25)
 life_expectancy = st.sidebar.number_input("Life Expectancy", min_value=1, max_value=120, value=80)
 
-
 US_AVERAGE = 7 + 2 / 60        # 7 hours 2 minutes
 WORLD_AVERAGE = 6 + 54 / 60    # 6 hours 54 minutes
 NEGATIVE_THRESHOLD = 2         # 2 hours recreational screen time
@@ -475,7 +474,7 @@ for category, strategies in strategy_categories.items():
 
     category_scores[category] = used_count
 
-strategy_df = show_table(custom_strategies, "Your Screen-Time Strategy Checklist")
+strategy_df = show_table(custom_strategies, "Your Personalized Plan: Strategies of Interest")
 
 show_donut_chart(
     list(category_scores.keys()),
