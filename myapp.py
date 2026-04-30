@@ -122,7 +122,7 @@ def rainbow_spiral():
     )
 
     fig.update_layout(
-        title="Progress",
+        title="Click and Drag to Change Your Perspective",
         scene=dict(
             xaxis_title="X Axis",
             yaxis_title="Y Axis",
