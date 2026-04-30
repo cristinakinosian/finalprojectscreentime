@@ -13,7 +13,7 @@ secondaryBackgroundColor = "#DCE0B8"
 textColor = "#5D4037"
 
 # font 
-font = "serif"
+font = "sans serif"
 
 # border color (Rose pink)
 borderColor = ""#E08396"
