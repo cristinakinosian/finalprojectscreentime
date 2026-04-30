@@ -111,12 +111,12 @@ def linear_model(x, m, b):
 
 st.title("Final Project: How to Improve Your Health Through Strategic Sedentary Screen Time Interventions")
 st.header("Introduction")
-st.subheader(You are likely accumulating sedentary screen time while reading this sentence right now. 
+st.subheader("You are likely accumulating sedentary screen time while reading this sentence right now. 
     In the last decade, sedentary screen time has increased exponentially, with research consistently concluding that screen-based sedentary activities increase the risk of poor physical and mental health.
-    In fact, sedentary *screen* time specifically is more detrimental to health than any other sedentary non-screen activities (Keadle et. al., 2025).)
+    In fact, sedentary *screen* time specifically is more detrimental to health than any other sedentary non-screen activities (Keadle et. al., 2025).")
 st.write(
-    "If you’ve ever wondered why it is so difficult to implement healthier routines, author James Clear may have answers for you. In his best-selling 2018 book, Atomic Habits, Clear describes his well-researched techniques for successful habit formation and habit cessation. 
-    The central idea is to effectively “decrease friction” by making it easier to choose a good habit, and “increase friction” by making it harder to choose a bad habit. 
+    "If you have ever wondered why it is so difficult to implement healthier routines, author James Clear may have answers for you. In his best-selling 2018 book, Atomic Habits, Clear describes his well-researched techniques for successful habit formation and habit cessation. 
+    The central idea is to effectively decrease friction by making it easier to choose a good habit, and increase friction by making it harder to choose a bad habit. 
     A combination of both will therefore yield the best results, thus we will explore various examples of specific strategies to accomplish this goal. 
     After completing this interactive questionnaire, you will be armed with a customized plan for improving your health through specific sedentary screen time interventions that work for you and your circumstances. 
     You will also be able to estimate your daily screen time, compare it with common averages, reflect on possible side effects, and choose personalized strategies for reducing sedentary screen use, backed by habit formation theory."
