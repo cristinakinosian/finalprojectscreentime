@@ -106,7 +106,7 @@ st.divider()
 # user screen habits 
 
 st.header("What are your current screen habits?")
-st.write("If you have a smartphone, you can find your average daily screen time in your device settings.")
+st.write("***If you have a smartphone, you can find your average daily screen time in your device settings.***")
 
 col1, col2, col3 = st.columns(3)
 
@@ -121,7 +121,7 @@ with col1:
 
 with col2:
     non_leisure_screen_time = st.number_input(
-        "Unavoidable non-leisure screen time, in hours",
+        "Unavoidable work and/or school screen time approximation, in hours",
         min_value=0.0,
         max_value=24.0,
         value=3.0,
@@ -130,7 +130,7 @@ with col2:
 
 with col3:
     recreational_screen_time = st.number_input(
-        "Other recreational screen time, not including smartphone, in hours",
+        "Other daily recreational screen time approximation, **not including smartphone**, in hours",
         min_value=0.0,
         max_value=24.0,
         value=2.0,
@@ -139,9 +139,9 @@ with col3:
 
 total_screen_time = phone_screen_time + non_leisure_screen_time + recreational_screen_time
 
-st.subheader("Daily Screen Time Comparison")
+st.subheader("Your Average vs. Others")
 show_bar_graph(
-    ["Your Average", "U.S. Average", "Worldwide Average"],
+    [":rainbow[Your Average]", "U.S. Average", "Worldwide Average"],
     [phone_screen_time, US_AVERAGE, WORLD_AVERAGE],
     "Daily Smartphone Screen Time Comparison",
 )
@@ -152,11 +152,10 @@ st.caption("Note: Information gathered from World Health Organization and Statis
 show_2nd_bar_graph(
     ["Phone\nScreen Time", "Other Leisure\nScreen Time", "Unavoidable\nScreen Time", "Total\nScreen Time"],
     [phone_screen_time, recreational_screen_time, non_leisure_screen_time, total_screen_time],
-    "Your Estimated Daily Screen Time",
+    "Screen Time Source Distribution by Category",
 )
 
 st.divider()
-
 
 # Screen time threshold guess 
 
