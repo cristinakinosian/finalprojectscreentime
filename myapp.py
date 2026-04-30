@@ -65,31 +65,37 @@ def show_table(data, title):
     st.dataframe(df, use_container_width=True, hide_index=True)
     return df
 
+colors2 = ['#D18AA1', '#FFC296', '#DCE0B8', '#BAAFC7']
 
 def show_donut_chart(labels, data, title):
-    """Create and display a donut chart."""
+    """donut chart using plotly."""
+    
     if sum(data) == 0:
         st.info("No strategies were selected, so no chart can be displayed yet.")
         return
 
-    fig, ax = plt.subplots(figsize=(5, 5))
-    explode = [0.05] * len(data)
-
-    ax.pie(
-        data,
-        labels=labels,
-        explode=explode,
-        autopct="%1.1f%%",
-        pctdistance=0.82,
-        startangle=90,
+    fig = go.Figure(
+        data=[
+            go.Pie(
+                labels=labels,
+                values=data,
+                hole=0.6,  # Controls donut thickness (similar to your 0.65 circle)
+                pull=[0.05] * len(data),  # Equivalent to explode
+                marker=dict(colors=colors2),
+                textinfo="percent+label",
+                insidetextorientation="radial"
+            )
+        ]
     )
 
-    centre_circle = plt.Circle((0, 0), 0.65, fc="white")
-    ax.add_artist(centre_circle)
-    ax.set_title(title)
-    fig.tight_layout()
-    st.pyplot(fig)
-    plt.close(fig)
+    fig.update_layout(
+        title=title,
+        showlegend=True,
+        margin=dict(t=60, b=20, l=20, r=20)
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
+
 
 
 def linear_model(x, m, b):
