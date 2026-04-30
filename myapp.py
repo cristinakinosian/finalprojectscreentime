@@ -62,7 +62,7 @@ def show_table(data, title):
 def show_donut_chart(labels, data, title):
     """Create and display a donut chart."""
     if sum(data) == 0:
-        st.info("No strategies were selected, so no donut chart can be displayed yet.")
+        st.info("No strategies were selected, so no chart can be displayed yet.")
         return
 
     fig, ax = plt.subplots(figsize=(5, 5))
@@ -146,7 +146,7 @@ show_bar_graph(
     "Daily Smartphone Screen Time Comparison",
 )
 
-st.warning(f"Your estimated total daily screen time is **{total_screen_time:.2f} hours**.")
+st.warning(f":rainbow[Your estimated total daily screen time is **{total_screen_time:.2f} hours**.]")
 st.caption("Note: Information gathered from World Health Organization and Statista, as of 2024. Full works cited list available in the final section of this app.")
 
 show_2nd_bar_graph(
