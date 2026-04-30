@@ -465,10 +465,9 @@ st.divider()
 # -----------------------------
 # Section 8: Interpolation and curve fitting example
 # -----------------------------
-st.header("8. Simple modeling example")
+st.header("Your Risk of Experiencing Side Effects")
 st.write(
-    "This section uses interpolation and curve fitting to estimate a simple trend. "
-    "It is included to help satisfy the coding requirement involving interpolation, solving, or curve fitting."
+    "This section uses interpolation and curve fitting to estimate a simple trend: as sedentary screen time hours increase, so does the risk of experiencing negative symptoms. "
 )
 
 sample_hours = np.array([0, 1, 2, 3, 4, 5, 6], dtype=float)
