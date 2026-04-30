@@ -136,7 +136,7 @@ def rainbow_spiral():
     
 # Top of web page
 
-st.title("Optimize Your Health and Happiness by Minimizing Sedentary Screen Time")
+st.title("Optimize Your Health and Happiness by Minimizing Your Superfluous Sedentary Screen Time")
 st.write("a project by :rainbow[**Cristina Kinosian**]")
 st.header("Background")
 st.subheader('You are likely accumulating sedentary screen time while reading this sentence right now.')
@@ -149,8 +149,8 @@ st.divider()
 
 # user screen habits 
 
-st.header("What are your current screen habits?")
-st.write("***If you have a smartphone, you can find your average daily screen time in your device settings.***")
+st.header("Enter your daily screen time values below")
+st.subheader("***If you have a smartphone, you can find your average daily screen time in your device settings.***")
 
 col1, col2, col3 = st.columns(3)
 
@@ -161,6 +161,7 @@ with col1:
         max_value=24.0,
         value=4.0,
         step=0.25,
+        icon="📲"
     )
 
 with col2:
@@ -170,6 +171,7 @@ with col2:
         max_value=24.0,
         value=3.0,
         step=0.25,
+        icon="🖥️"
     )
 
 with col3:
@@ -179,6 +181,7 @@ with col3:
         max_value=24.0,
         value=2.0,
         step=0.25,
+        icon="🎮"
     )
 
 total_screen_time = phone_screen_time + non_leisure_screen_time + recreational_screen_time
@@ -218,7 +221,7 @@ guess = st.slider(
     step=0.5,
 )
 
-with st.expander(":rainbow[Click here to reveal answer!]", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
+with st.expander(":rainbow[Click here to reveal answer!]", expanded=False, key=None, icon="❓", width="stretch", on_change="ignore", args=None, kwargs=None):
     if guess == NEGATIVE_THRESHOLD:
         st.success("Precisely! The threshold is about 2 hours per day, according to the World Health Organization and many studies.")
     elif guess < NEGATIVE_THRESHOLD:
