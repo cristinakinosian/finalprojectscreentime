@@ -254,7 +254,7 @@ st.divider()
 # symptoms checklist 
 #-----------------------------
 
-st.header("Screen Use Side Effects")
+st.header(":rainbow-background[Screen Use Side Effects]")
 st.write("Do you experience any of the following side effects, especially after high-screen-time days?")
 
 symptoms = [
