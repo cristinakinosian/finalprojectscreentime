@@ -161,7 +161,7 @@ st.divider()
 # user screen habits 
 
 st.header("Your Average Daily Screen Time")
-st.subheader("***If you have a smartphone, you can find your average daily screen time in your device settings.***")
+st.subheader(":rainbow-background[***If you have a smartphone, you can find your average daily screen time in your device settings.***]")
 st.subheader("Enter your best estimate of your average daily screen time, **in hours**, for each category.")
 
 col1, col2, col3 = st.columns(3)
@@ -205,7 +205,7 @@ show_2nd_bar_graph(
     "Screen Time Source Distribution by Category",
 )
 
-st.warning(f":rainbow[YOUR TOTAL DAILY SCREEN TIME IS **{total_screen_time:.2f} HOURS**.]")
+st.metric(label="Your approximate total daily screen time", value="**{total_screen_time:.2f} HOURS**")
 
 st.subheader("Your Average vs. Others")
 show_bar_graph(
