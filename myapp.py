@@ -245,10 +245,8 @@ with st.expander(":rainbow[Click here to reveal answer!]", expanded=False):
         st.warning("Not quite, it is actually a little lower — the absolute maximum is a total of 4 hours per day, but research shows that negative health outcomes can occur at as little as 2 hours per day.")
 st.info("Khanani et al., 2025")
 
-st.write(
-    "If the excessive recreational screen-time threshold is regularly exceeded, being otherwise physically active "
-    "may not fully offset the negative health effects of long sedentary periods (Keadle et al., 2025)"
-)
+st.write("If the excessive recreational screen-time threshold is regularly exceeded, being otherwise physically active "
+    "may not fully offset the negative health effects of long sedentary periods (Keadle et al., 2025)")
 
 st.divider()
 
