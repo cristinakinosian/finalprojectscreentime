@@ -148,12 +148,12 @@ def rainbow_spiral():
 # Top of web page
 
 st.title("Optimize Your Health and Happiness by Minimizing Your Superfluous Sedentary Screen Time")
-st.write("a project by :rainbow[**Cristina Kinosian**]")
+st.write("a project by :rainbow-background[**Cristina Kinosian**]")
 st.header("Background")
 st.subheader('You are likely accumulating sedentary screen time while reading this sentence right now.')
 st.markdown('In the last decade, sedentary screen time has increased exponentially, with research consistently concluding that screen-based sedentary activities increase the risk of poor physical and mental health. In fact, sedentary *screen* time specifically is more detrimental to health than any other sedentary non-screen activities, according to research by Keadle et. al. in 2025.')
 st.subheader('So, how can we change our screen habits to improve longevity and quality of life?')
-with st.expander(":rainbow[Click here]", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
+with st.expander(":rainbow-background[Click here]", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
     st.write('''Author James Clear may have answers for you. In his best-selling 2018 book, Atomic Habits, Clear describes his well-researched techniques for successful habit formation and habit cessation. The central idea is to effectively decrease friction by making it easier to choose a good habit, and increase friction by making it harder to choose a bad habit. A combination of both will therefore yield the best results, thus we will explore various examples of specific strategies to accomplish this goal. After completing this interactive questionnaire, you will be armed with a customized plan for improving your health through specific sedentary screen time interventions that work for you and your circumstances. You will also be able to estimate your daily screen time, compare it with common averages, reflect on possible side effects, and choose personalized strategies for reducing sedentary screen use, backed by habit formation theory.''')
 
 st.divider()
@@ -161,7 +161,7 @@ st.divider()
 # user screen habits 
 
 st.header("Your Average Daily Screen Time")
-st.subheader(":rainbow-background[***If you have a smartphone, you can find your average daily screen time in your device settings.***]")
+st.subheader(":rainbow-background-background[***If you have a smartphone, you can find your average daily screen time in your device settings.***]")
 st.subheader("Enter your best estimate of your average daily screen time, **in hours**, for each category.")
 
 col1, col2, col3 = st.columns(3)
@@ -236,7 +236,7 @@ guess = st.slider(
     step=0.5,
 )
 
-with st.expander(":rainbow[Click here to reveal answer!]", expanded=False):
+with st.expander(":rainbow-background[Click here to reveal answer!]", expanded=False):
     if NEGATIVE_MIN <= guess <= NEGATIVE_MAX:
         st.success("Your guess is within range! The recommended screen time limit is about 2–4 hours per day, according to research and health guidelines.")
     elif guess < NEGATIVE_MIN:
@@ -254,7 +254,7 @@ st.divider()
 # symptoms checklist 
 #-----------------------------
 
-st.header(":rainbow-background[Screen Use Side Effects]")
+st.header(":rainbow-background-background[Screen Use Side Effects]")
 st.write("Do you experience any of the following side effects, especially after high-screen-time days?")
 
 symptoms = [
@@ -435,15 +435,15 @@ st.write(
     "In the next section, you will be able to choose from a variety of evidence-based strategies, organized into three categories based on habit formation principles: "
 )
 
-st.subheader(":rainbow[1. Incorporating movement during unavoidable screen time, such as work or school.]")
+st.subheader(":rainbow-background[1. Incorporating movement during unavoidable screen time, such as work or school.]")
 st.write("In some environments, such as work or school, screen use is often unavoidable. Therefore, to reduce sedentary screen behavior, the best interventions are those that allow for physical activity during screen use. Tools such as walking pads, pedal devices, stationary bikes, and standing desks allow individuals to remain engaged with screens while still being physically active. In a 2020 umbrella review spanning 17 different systematic reviews and meta-analyses, workplace interventions that allow for physical activity were shown to decrease sedentary time drastically, by 40–100 minutes per workday (Nguyen, et. al., 2020). Of all the strategies examined, such environmental changes were “shown to yield the most significant effect size” (Nguyen et. al., 2020). The most common environmental modification of this type seen in adult studies was the implementation of a tool aimed at decreasing sedentary time, and standing desks as a tool were associated with the most improvement. Additionally, interventions that targeted sedentary screen behavior specifically were more effective than interventions focused solely on increasing physical activity. (Nguyen, P. et. al., 2020). ")
 
 
-st.subheader(":rainbow[2. Increasing friction against screen use during your free time, i.e., making it less convenient to use screens.]")
+st.subheader(":rainbow-background[2. Increasing friction against screen use during your free time, i.e., making it less convenient to use screens.]")
 st.write("Interventions that make excessive screen use inconvenient are also proven to be highly effective. Examples of successful device-oriented strategies include digital lockouts, deleting or hiding apps, screen time limits, and reminder prompts on devices. These techniques introduce barriers that discourage prolonged use and have been shown to result in “consistent reductions in daily screen time across studies” [CK4.1](Buchanan, L.R. et. al., 2016). In Atomic Habits, James Clear states “before you try to increase your willpower, try to decrease the friction in your environment” (Clear, 2018). [CK5.1]Environmental modifications, such as increasing physical distance from devices, creating phone-free zones, or rearranging physical spaces, all function to encourage alternative activities[CK6.1]. Social environment also influences behavior, for example, family-based and socially supported interventions further enhance effectiveness by addressing broader environmental and social influences (Perrino et. al., 2022). Social, device-based, and environmental modifications all work synergistically to effectively reduce screen time.")
 
 
-st.subheader(":rainbow[3. Decreasing friction to engage in physical activity, i.e., making it easier and more rewarding to choose active alternative activities.]")
+st.subheader(":rainbow-background[3. Decreasing friction to engage in physical activity, i.e., making it easier and more rewarding to choose active alternative activities.]")
 st.write("Incorporating movement into screen time, rather than eliminating screen time altogether, is also effective in a recreational setting. Strategies like temptation bundling, environmental modifications, and choosing active video games improve health by replacing sedentary screen time with active screen time. Temptation bundling is the act of pairing an action you need to do with an action you want to do, such as only watching your favorite TV show while walking on a treadmill (Clear, 2018). Similarly, environmental modifications can look like introducing visual cues in typical sedentary screen time areas of the home; for example, placing a yoga mat in front of the TV to remind you to stretch while watching a show. Lastly, the strategic use of physically engaging screen-based games encourages movement. Examples of active video gaming include the use of Wii Fit, Dance Dance Revolution, Nintendo Switch fitness games, and Virtual Reality based games, all of which can be played from home. This strategy is particularly favorable, as recent research on virtual reality exercise demonstrates that immersive, movement-based screen experiences enhance enjoyment, perceived competence, and motivation to exercise, making them a promising tool for reducing sedentary behavior (Banerski et. Al., 2025).")
 
 
@@ -592,7 +592,7 @@ st.subheader(f"At {total_screen_time} hours per day, you spend roughly "
 # -----------------------------
 # Section 9: Final summary
 # -----------------------------
-st.title(":rainbow[Final Summary & Main Takeaways]")
+st.title(":rainbow-background[Final Summary & Main Takeaways]")
 
 strongest_category = max(category_scores, key=category_scores.get)
 weakest_category = min(category_scores, key=category_scores.get)
@@ -616,7 +616,7 @@ st.write("By tailoring multiple interventions to both the individual and their e
 st.subheader("Disclaimer: Any strategy can fall flat if implemented half-heartedly or mindlessly. Intentional, consistent implementation of strategies is necessary to change deeply ingrained habits related to screen use.")
 st.text("This understanding creates the best opportunity for success, creating an intrinsic motivation to combine behavioral, environmental, and technological approaches into a tailored, comprehensive solution. For example, Keadle et. al. found that intervention models combining multiple strategies such as education of health risks, earning screen time through exercise, automated app time limits, and text reminders of goals led to a tremendous decrease in screen use, exceeding reductions achieved by education-only approaches (Keadle et. al., 2025). These findings suggest that behavior change is most effectively achieved when interventions simultaneously target excessive screen use from behavioral, physical, and digital perspectives.")
 
-st.title(":rainbow-background[Do your best every day, and remember: *progress is not linear.*]")
+st.title(":rainbow-background-background[Do your best every day, and remember: *progress is not linear.*]")
 st.title("What Progress Actually Looks Like")
 rainbow_spiral()
 
