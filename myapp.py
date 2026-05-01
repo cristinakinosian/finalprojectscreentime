@@ -205,7 +205,10 @@ show_2nd_bar_graph(
     "Screen Time Source Distribution by Category",
 )
 
-st.metric(label="Your approximate total daily screen time", value=total_screen_time,"hours")
+st.metric(
+    label="Your approximate total daily screen time",
+    value=f"{total_screen_time} hours"
+)
 
 st.subheader("Your Average vs. Others")
 show_bar_graph(
