@@ -161,7 +161,7 @@ st.divider()
 # user screen habits 
 
 st.header("Your Average Daily Screen Time")
-st.subheader(":rainbow-background-background[***If you have a smartphone, you can find your average daily screen time in your device settings.***]")
+st.subheader(":rainbow-background[***If you have a smartphone, you can find your average daily screen time in your device settings.***]")
 st.subheader("Enter your best estimate of your average daily screen time, **in hours**, for each category.")
 
 col1, col2, col3 = st.columns(3)
@@ -254,7 +254,7 @@ st.divider()
 # symptoms checklist 
 #-----------------------------
 
-st.header(":rainbow-background-background[Screen Use Side Effects]")
+st.header(":rainbow-background[Screen Use Side Effects]")
 st.write("Do you experience any of the following side effects, especially after high-screen-time days?")
 
 symptoms = [
@@ -616,7 +616,7 @@ st.write("By tailoring multiple interventions to both the individual and their e
 st.subheader("Disclaimer: Any strategy can fall flat if implemented half-heartedly or mindlessly. Intentional, consistent implementation of strategies is necessary to change deeply ingrained habits related to screen use.")
 st.text("This understanding creates the best opportunity for success, creating an intrinsic motivation to combine behavioral, environmental, and technological approaches into a tailored, comprehensive solution. For example, Keadle et. al. found that intervention models combining multiple strategies such as education of health risks, earning screen time through exercise, automated app time limits, and text reminders of goals led to a tremendous decrease in screen use, exceeding reductions achieved by education-only approaches (Keadle et. al., 2025). These findings suggest that behavior change is most effectively achieved when interventions simultaneously target excessive screen use from behavioral, physical, and digital perspectives.")
 
-st.title(":rainbow-background-background[Do your best every day, and remember: *progress is not linear.*]")
+st.title(":rainbow-background[Do your best every day, and remember: *progress is not linear.*]")
 st.title("What Progress Actually Looks Like")
 rainbow_spiral()
 
