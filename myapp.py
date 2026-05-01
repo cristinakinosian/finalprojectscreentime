@@ -248,6 +248,7 @@ st.info("Khanani et al., 2025")
 st.write(
     "If the excessive recreational screen-time threshold is regularly exceeded, being otherwise physically active "
     "may not fully offset the negative health effects of long sedentary periods (Keadle et al., 2025)"
+)
 
 st.divider()
 
