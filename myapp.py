@@ -31,7 +31,8 @@ life_expectancy = st.sidebar.number_input("Life Expectancy", min_value=1, max_va
 
 US_AVERAGE = 7 + 2 / 60        # 7 hours 2 minutes
 WORLD_AVERAGE = 6 + 54 / 60    # 6 hours 54 minutes
-NEGATIVE_THRESHOLD = 2         # 2 hours recreational screen time
+NEGATIVE_MIN = 2  
+NEGATIVE_MAX = 4          # hours recreational screen time
 
 
 # graph display functions
@@ -218,27 +219,28 @@ st.divider()
 
 # Screen time threshold guess 
 
-st.subheader("Use the slider to guess how many hours of recreational screen time we can have before we are at risk of negative side effects and longterm negative health outcomes")
+st.subheader("How many ***total*** hours of screen time we can have before we are at risk of negative side effects and longterm negative health outcomes")
 st.write(
     "Screen time for recreation can feel relaxing and is okay in moderation, but excessive sedentary recreational screen time "
     "is consistently linked to negative health outcomes."
 )
 
 guess = st.slider(
-    "Guess the maximum number of daily recreational sedentary screen time hours that is recommended to avoid negative health outcomes",
+    "Use the slider to guess the maximum number of daily screen time hours that is recommended to avoid negative health outcomes",
     min_value=0.0,
     max_value=18.0,
     value=3.0,
     step=0.5,
 )
 
-with st.expander(":rainbow[Click here to reveal answer!]", expanded=False, key=None, icon="❓", width="stretch", on_change="ignore", args=None, kwargs=None):
-    if guess == NEGATIVE_THRESHOLD:
-        st.success("Precisely! The threshold is about 2 hours per day, according to the World Health Organization and many studies.")
-    elif guess < NEGATIVE_THRESHOLD:
-        st.warning("Not quite — the threshold used in this project is a little higher: about 2 hours per day.")
+with st.expander(":rainbow[Click here to reveal answer!]", expanded=False):
+    if NEGATIVE_MIN <= guess <= NEGATIVE_MAX:
+        st.success("Your guess is within range! The recommended screen time limit is about 2–4 hours per day, according to research and health guidelines.")
+    elif guess < NEGATIVE_MIN:
+        st.warning("It is a bit higher than that — the absolute maximum is a total of 4 hours per day, but research shows that negative health outcomes can occur at as little as 2 hours per day.")
     else:
-        st.warning("It is actually less than that: only 2 hours per day.")
+        st.warning("Not quite, it is actually a little lower — the absolute maximum is a total of 4 hours per day, but research shows that negative health outcomes can occur at as little as 2 hours per day.")
+st.info("Khanani et al., 2025")
 
 st.write(
     "If the excessive recreational screen-time threshold is regularly exceeded, being otherwise physically active "
@@ -609,6 +611,7 @@ This study examined the effectiveness of family-based interventions in reducing 
 with st.expander("Additional References & Data Sources Listed Here", expanded=False, key=None, icon=None, width="stretch", on_change="ignore", args=None, kwargs=None):
     st.write('''
         Devi, Khumukcham A.; Singh, Sudhakar K.1. The hazards of excessive screen time: Impacts on physical health, mental health, and overall well-being. Journal of Education and Health Promotion 12(1):413, November 2023. | DOI: 10.4103/jehp.jehp_447_23 
+        Khanani MI, Khan MR, Farooqi MF, Fazal J, Aabideen Z, Alkuwaiti NS. Digital Media Use and Screen Time Exposure Among Youths: A Lifestyle-Based Public Health Concern. Cureus. 2025 Jul 20;17(7):e88373. doi: 10.7759/cureus.88373. PMID: 40837898; PMCID: PMC12364383.
         ''')
     
 
