@@ -295,13 +295,13 @@ HEALTHY_MAX = 4
 # Choose color based on user's total screen time
 if HEALTHY_MIN <= total_screen_time <= HEALTHY_MAX:
     metric_color = "#DCE0B8"  # your soft green theme color
-    message = "Within the recommended range"
+    message = "is within the recommended range"
 elif total_screen_time < HEALTHY_MIN:
     metric_color = "#FFC296"  # your peach theme color
-    message = "Below the recommended range"
+    message = "is below the recommended range"
 else:
     metric_color = "#D18AA1"  # your pink theme color
-    message = "Above the recommended range"
+    message = "is above the recommended range"
 
 st.markdown(
     f"""
