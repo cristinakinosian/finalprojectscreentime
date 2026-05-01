@@ -210,7 +210,7 @@ st.metric(
     value=f"{total_screen_time} hours"
 )
 
-st.subheader("Your Average vs. Others")
+st.subheader("Your Average vs. Others Globally")
 show_bar_graph(
     ["Your Average", "U.S. Average", "Worldwide Average"],
     [phone_screen_time, US_AVERAGE, WORLD_AVERAGE],
@@ -249,7 +249,43 @@ st.write(
     "If the excessive recreational screen-time threshold is regularly exceeded, being otherwise physically active "
     "may not fully offset the negative health effects of long sedentary periods (Keadle et al., 2025)"
 )
+HEALTHY_MIN = 2
+HEALTHY_MAX = 4
 
+# Choose color based on user's total screen time
+if HEALTHY_MIN <= total_screen_time <= HEALTHY_MAX:
+    metric_color = "#DCE0B8"  # your soft green theme color
+    message = "Within the recommended range"
+elif total_screen_time < HEALTHY_MIN:
+    metric_color = "#FFC296"  # your peach theme color
+    message = "Below the recommended range"
+else:
+    metric_color = "#D18AA1"  # your pink theme color
+    message = "Above the recommended range"
+
+st.markdown(
+    f"""
+    <div style="
+        background-color: {metric_color};
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    ">
+        <p style="font-size: 18px; margin-bottom: 5px;">
+            Your approximate total daily screen time
+        </p>
+        <h2 style="margin: 0;">
+            {total_screen_time:.1f} hours
+        </h2>
+        <p style="font-size: 16px; margin-top: 5px;">
+            {message}
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 st.divider()
 
 # -----------------------------
