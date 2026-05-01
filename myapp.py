@@ -288,7 +288,7 @@ else:
     )
 
 st.divider()
-)
+
 HEALTHY_MIN = 2
 HEALTHY_MAX = 4
 
