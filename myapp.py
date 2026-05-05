@@ -147,7 +147,7 @@ def rainbow_spiral():
     
 # Top of web page
 
-st.title("Optimize Your Health and Happiness by Minimizing Your Superfluous Sedentary Screen Time")
+st.title(":rainbow-background[Optimize Your Health and Happiness by Minimizing Your Superfluous Sedentary Screen Time]")
 st.write("a project by :rainbow-background[**Cristina Kinosian**]")
 st.header("Background")
 st.subheader('You are likely accumulating sedentary screen time while reading this sentence right now.')
