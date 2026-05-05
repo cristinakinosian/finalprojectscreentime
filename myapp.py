@@ -198,6 +198,7 @@ with col3:
 
 total_screen_time = phone_screen_time + non_leisure_screen_time + recreational_screen_time
 
+st.sidebar.subheader(f"Your Calculated Total Daily Screen Time, {total_screen_time}!")
 
 show_2nd_bar_graph(
     ["Phone\nScreen Time", "Other Leisure\nScreen Time", "Unavoidable\nScreen Time", "Total\nScreen Time"],
